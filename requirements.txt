@@ -1,16 +1,10 @@
-python-dotenv
-pandas
-numpy
-pymongo
-certifi
-pymongo[srv]
-scikit-learn
-mlflow
-pyaml
-dagshub
 fastapi
 uvicorn
+numpy
+pandas
+scikit-learn
+joblib
+python-dotenv
 python-multipart
-
-
-##-e .
+jinja2
+pyyaml
