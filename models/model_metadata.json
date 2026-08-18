@@ -1,0 +1,270 @@
+{
+  "model_name": "random_forest",
+  "model_type": "RandomForestClassifier",
+  "dataset_name": "url_dataset_clean.csv",
+  "trained_at": "2026-08-18T13:35:33.740620+00:00",
+  "total_samples": 40438,
+  "split_samples": {
+    "train": {
+      "total": 28306,
+      "distribution": {
+        "benign": 20898,
+        "defacement": 5219,
+        "phishing": 1721,
+        "malware": 468
+      }
+    },
+    "validation": {
+      "total": 6066,
+      "distribution": {
+        "benign": 4478,
+        "defacement": 1118,
+        "phishing": 369,
+        "malware": 101
+      }
+    },
+    "test": {
+      "total": 6066,
+      "distribution": {
+        "benign": 4478,
+        "defacement": 1118,
+        "phishing": 369,
+        "malware": 101
+      }
+    }
+  },
+  "feature_count": 24,
+  "features": [
+    "url_length",
+    "hostname_length",
+    "path_length",
+    "dot_count",
+    "subdomain_count",
+    "slash_count",
+    "hyphen_count",
+    "underscore_count",
+    "digit_count",
+    "special_char_count",
+    "has_at_symbol",
+    "has_ip_address",
+    "uses_https",
+    "uses_http",
+    "suspicious_keyword_count",
+    "is_shortener",
+    "excessive_subdomains",
+    "encoded_character_count",
+    "query_parameter_count",
+    "has_fragment",
+    "suspicious_tld",
+    "unusual_hostname_pattern",
+    "url_entropy",
+    "hostname_digit_count"
+  ],
+  "classes": [
+    "benign",
+    "defacement",
+    "malware",
+    "phishing"
+  ],
+  "label_mapping": {
+    "benign": "SAFE",
+    "defacement": "MALICIOUS",
+    "phishing": "MALICIOUS",
+    "malware": "MALICIOUS"
+  },
+  "candidate_validation_comparison": {
+    "logistic_regression": {
+      "accuracy": 0.7272,
+      "macro_f1": 0.5481,
+      "weighted_f1": 0.759,
+      "roc_auc_macro_ovr": 0.8752,
+      "per_class": {
+        "benign": {
+          "precision": 0.9341,
+          "recall": 0.7184,
+          "f1_score": 0.8122,
+          "support": 4478
+        },
+        "defacement": {
+          "precision": 0.6508,
+          "recall": 0.7603,
+          "f1_score": 0.7013,
+          "support": 1118
+        },
+        "malware": {
+          "precision": 0.1641,
+          "recall": 0.5347,
+          "f1_score": 0.2512,
+          "support": 101
+        },
+        "phishing": {
+          "precision": 0.2938,
+          "recall": 0.7859,
+          "f1_score": 0.4277,
+          "support": 369
+        }
+      }
+    },
+    "random_forest": {
+      "accuracy": 0.9327,
+      "macro_f1": 0.8577,
+      "weighted_f1": 0.9308,
+      "roc_auc_macro_ovr": 0.974,
+      "per_class": {
+        "benign": {
+          "precision": 0.939,
+          "recall": 0.9799,
+          "f1_score": 0.959,
+          "support": 4478
+        },
+        "defacement": {
+          "precision": 0.8953,
+          "recall": 0.8032,
+          "f1_score": 0.8468,
+          "support": 1118
+        },
+        "malware": {
+          "precision": 0.9375,
+          "recall": 0.5941,
+          "f1_score": 0.7273,
+          "support": 101
+        },
+        "phishing": {
+          "precision": 0.9571,
+          "recall": 0.8455,
+          "f1_score": 0.8978,
+          "support": 369
+        }
+      }
+    },
+    "hist_gradient_boosting": {
+      "accuracy": 0.896,
+      "macro_f1": 0.7914,
+      "weighted_f1": 0.9002,
+      "roc_auc_macro_ovr": 0.9732,
+      "per_class": {
+        "benign": {
+          "precision": 0.9691,
+          "recall": 0.9035,
+          "f1_score": 0.9352,
+          "support": 4478
+        },
+        "defacement": {
+          "precision": 0.7388,
+          "recall": 0.8828,
+          "f1_score": 0.8044,
+          "support": 1118
+        },
+        "malware": {
+          "precision": 0.471,
+          "recall": 0.7228,
+          "f1_score": 0.5703,
+          "support": 101
+        },
+        "phishing": {
+          "precision": 0.8225,
+          "recall": 0.8916,
+          "f1_score": 0.8557,
+          "support": 369
+        }
+      }
+    }
+  },
+  "test_evaluation": {
+    "accuracy": 0.9288,
+    "macro_f1": 0.8541,
+    "weighted_f1": 0.9271,
+    "roc_auc_macro_ovr": 0.9749,
+    "per_class": {
+      "benign": {
+        "precision": 0.9391,
+        "recall": 0.975,
+        "f1_score": 0.9567,
+        "support": 4478
+      },
+      "defacement": {
+        "precision": 0.8743,
+        "recall": 0.8086,
+        "f1_score": 0.8401,
+        "support": 1118
+      },
+      "malware": {
+        "precision": 0.9,
+        "recall": 0.6238,
+        "f1_score": 0.7368,
+        "support": 101
+      },
+      "phishing": {
+        "precision": 0.9617,
+        "recall": 0.8157,
+        "f1_score": 0.8827,
+        "support": 369
+      }
+    },
+    "confusion_matrix": [
+      [
+        4366,
+        111,
+        0,
+        1
+      ],
+      [
+        212,
+        904,
+        0,
+        2
+      ],
+      [
+        19,
+        10,
+        63,
+        9
+      ],
+      [
+        52,
+        9,
+        7,
+        301
+      ]
+    ],
+    "classification_report": {
+      "benign": {
+        "precision": 0.9391266939126693,
+        "recall": 0.9749888343010272,
+        "f1-score": 0.9567218143968446,
+        "support": 4478.0
+      },
+      "defacement": {
+        "precision": 0.874274661508704,
+        "recall": 0.8085867620751341,
+        "f1-score": 0.8401486988847584,
+        "support": 1118.0
+      },
+      "malware": {
+        "precision": 0.9,
+        "recall": 0.6237623762376238,
+        "f1-score": 0.7368421052631579,
+        "support": 101.0
+      },
+      "phishing": {
+        "precision": 0.9616613418530351,
+        "recall": 0.8157181571815718,
+        "f1-score": 0.8826979472140762,
+        "support": 369.0
+      },
+      "accuracy": 0.9287833827893175,
+      "macro avg": {
+        "precision": 0.9187656743186021,
+        "recall": 0.8057640324488392,
+        "f1-score": 0.8541026414397093,
+        "support": 6066.0
+      },
+      "weighted avg": {
+        "precision": 0.9278934128010937,
+        "recall": 0.9287833827893175,
+        "f1-score": 0.9270727209653484,
+        "support": 6066.0
+      }
+    }
+  }
+}

@@ -1,2 +1,47 @@
-venv
+# Python virtual environments
+venv/
+.venv/
+env/
+
+# Environment variables
 .env
+.env.*
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Testing/tooling
+.pytest_cache/
+.mypy_cache/
+.coverage
+
+# Logs
+logs/
+
+# Generated prediction output
+prediction_output/
+
+# Frontend dependencies
+frontend/node_modules/
+
+# Frontend build output
+frontend/dist/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dataset archives
+*.zip
+
+# Training datasets
+data/
+
+# Legacy duplicate URL model
+url_model/
